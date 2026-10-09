@@ -1,0 +1,49 @@
+{
+  "id": "mrbeast",
+  "name": "MrBeast",
+  "category": "bold",
+  "font": {
+    "family": "Impact",
+    "size": 72,
+    "weight": 900,
+    "italic": false,
+    "uppercase": true,
+    "letterSpacing": 3
+  },
+  "colors": {
+    "fill": "#FFFFFF",
+    "stroke": "#000000",
+    "strokeWidth": 8,
+    "shadow": "0 6px 20px rgba(0,0,0,0.9)",
+    "activeWord": "#FF3D3D",
+    "activeBg": "transparent"
+  },
+  "background": {
+    "enabled": false,
+    "color": "#000000",
+    "opacity": 0,
+    "borderRadius": 0,
+    "padding": [0, 0, 0, 0]
+  },
+  "position": {
+    "vertical": "center",
+    "marginBottom": 0,
+    "alignment": "center"
+  },
+  "display": {
+    "wordsPerLine": 2,
+    "maxLines": 2,
+    "mode": "phrase"
+  },
+  "animation": {
+    "type": "bounce",
+    "activeWordScale": 1.35,
+    "duration": 200,
+    "easing": "cubic-bezier(0.34, 1.56, 0.64, 1)"
+  },
+  "emoji": {
+    "enabled": true,
+    "position": "inline",
+    "reactiveToSentiment": true
+  }
+}

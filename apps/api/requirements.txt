@@ -1,0 +1,35 @@
+# ── Core ──
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+pydantic>=2.9.0
+pydantic-settings>=2.5.0
+sqlmodel>=0.0.22
+python-multipart>=0.0.9
+
+# ── Video / Audio ──
+yt-dlp>=2024.10.0
+ffmpeg-python>=0.2.0
+
+# ── Transcription ──
+faster-whisper>=1.0.0
+silero-vad>=5.1
+
+# ── Scene / Vision ──
+scenedetect[opencv]>=0.6.4
+mediapipe>=0.10.14
+opencv-python-headless>=4.10.0
+
+# ── Audio analysis ──
+librosa>=0.10.2
+
+# ── LLM ──
+google-generativeai>=0.8.0
+groq>=0.11.0
+httpx>=0.27.0
+
+# ── TTS ──
+# kokoro and piper installed separately (large models)
+
+# ── Utilities ──
+aiofiles>=24.1.0
+python-dotenv>=1.0.1

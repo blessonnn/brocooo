@@ -1,0 +1,49 @@
+{
+  "id": "karaoke-sweep",
+  "name": "Karaoke Sweep",
+  "category": "animated",
+  "font": {
+    "family": "Poppins",
+    "size": 54,
+    "weight": 700,
+    "italic": false,
+    "uppercase": false,
+    "letterSpacing": 0
+  },
+  "colors": {
+    "fill": "#AAAAAA",
+    "stroke": "#000000",
+    "strokeWidth": 3,
+    "shadow": "0 2px 8px rgba(0,0,0,0.5)",
+    "activeWord": "#C6FF3D",
+    "activeBg": "transparent"
+  },
+  "background": {
+    "enabled": false,
+    "color": "#000000",
+    "opacity": 0,
+    "borderRadius": 0,
+    "padding": [0, 0, 0, 0]
+  },
+  "position": {
+    "vertical": "bottom",
+    "marginBottom": 100,
+    "alignment": "center"
+  },
+  "display": {
+    "wordsPerLine": 5,
+    "maxLines": 2,
+    "mode": "phrase"
+  },
+  "animation": {
+    "type": "karaoke-sweep",
+    "activeWordScale": 1.0,
+    "duration": 0,
+    "easing": "linear"
+  },
+  "emoji": {
+    "enabled": false,
+    "position": "inline",
+    "reactiveToSentiment": false
+  }
+}

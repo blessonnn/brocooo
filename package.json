@@ -1,0 +1,16 @@
+{
+  "name": "brocooo",
+  "private": true,
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "dev:web": "pnpm --filter @brocooo/web dev",
+    "dev:api": "cd apps/api && uvicorn app.main:app --reload --host 0.0.0.0 --port 8000",
+    "dev:worker": "cd apps/worker && python worker.py"
+  },
+  "devDependencies": {
+    "turbo": "^2.1.0"
+  },
+  "packageManager": "pnpm@9.10.0"
+}

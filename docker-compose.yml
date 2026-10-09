@@ -1,0 +1,49 @@
+version: "3.9"
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://api:8000
+    depends_on:
+      - api
+    volumes:
+      - ./apps/web:/app
+      - /app/node_modules
+      - /app/.next
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./apps/api:/app
+      - ./storage:/app/storage
+      - ./packages/caption-styles:/app/caption-styles
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile.worker
+    env_file:
+      - .env
+    volumes:
+      - ./apps/worker:/app/worker
+      - ./apps/api:/app/api
+      - ./storage:/app/storage
+      - ./packages/caption-styles:/app/caption-styles
+    command: python worker/worker.py
+    depends_on:
+      - api
+
+volumes:
+  storage:

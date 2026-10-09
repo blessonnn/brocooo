@@ -1,0 +1,49 @@
+{
+  "id": "hormozi",
+  "name": "Hormozi",
+  "category": "bold",
+  "font": {
+    "family": "Montserrat",
+    "size": 64,
+    "weight": 900,
+    "italic": false,
+    "uppercase": true,
+    "letterSpacing": 2
+  },
+  "colors": {
+    "fill": "#FFFFFF",
+    "stroke": "#000000",
+    "strokeWidth": 6,
+    "shadow": "0 4px 12px rgba(0,0,0,0.8)",
+    "activeWord": "#FFD700",
+    "activeBg": "transparent"
+  },
+  "background": {
+    "enabled": false,
+    "color": "#000000",
+    "opacity": 0,
+    "borderRadius": 0,
+    "padding": [0, 0, 0, 0]
+  },
+  "position": {
+    "vertical": "bottom",
+    "marginBottom": 140,
+    "alignment": "center"
+  },
+  "display": {
+    "wordsPerLine": 3,
+    "maxLines": 2,
+    "mode": "phrase"
+  },
+  "animation": {
+    "type": "pop",
+    "activeWordScale": 1.2,
+    "duration": 120,
+    "easing": "ease-out"
+  },
+  "emoji": {
+    "enabled": false,
+    "position": "inline",
+    "reactiveToSentiment": false
+  }
+}
