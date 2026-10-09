@@ -1,10 +1,9 @@
 """Job queue model — SQLite-backed job table."""
 
 from datetime import datetime, timezone
-from typing import Optional
 from uuid import uuid4
 
-from sqlmodel import SQLModel, Field
+from sqlmodel import Field, SQLModel
 
 
 def _uuid() -> str:
@@ -24,15 +23,15 @@ class Job(SQLModel, table=True):
     # Pipeline stage
     stage: str = Field(default="queued")
     progress: float = Field(default=0.0)
-    message: Optional[str] = None
-    eta_seconds: Optional[int] = None
-    error: Optional[str] = None
+    message: str | None = None
+    eta_seconds: int | None = None
+    error: str | None = None
 
     # Worker claim
-    worker_id: Optional[str] = None
-    claimed_at: Optional[datetime] = None
+    worker_id: str | None = None
+    claimed_at: datetime | None = None
 
     # Timestamps
-    started_at: Optional[datetime] = None
-    completed_at: Optional[datetime] = None
+    started_at: datetime | None = None
+    completed_at: datetime | None = None
     created_at: datetime = Field(default_factory=_now)

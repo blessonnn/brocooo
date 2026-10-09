@@ -1,10 +1,9 @@
 """User model — optional account."""
 
 from datetime import datetime, timezone
-from typing import Optional
 from uuid import uuid4
 
-from sqlmodel import SQLModel, Field
+from sqlmodel import Field, SQLModel
 
 
 def _uuid() -> str:
@@ -19,10 +18,10 @@ class User(SQLModel, table=True):
     """Optional user account (magic link or Google sign-in)."""
 
     id: str = Field(default_factory=_uuid, primary_key=True)
-    email: Optional[str] = Field(default=None, unique=True, index=True)
-    name: Optional[str] = None
-    avatar_url: Optional[str] = None
-    provider: Optional[str] = None  # "google" | "email"
+    email: str | None = Field(default=None, unique=True, index=True)
+    name: str | None = None
+    avatar_url: str | None = None
+    provider: str | None = None  # "google" | "email"
 
     # Settings
     default_language: str = Field(default="auto")

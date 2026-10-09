@@ -1,13 +1,13 @@
 """Projects router — CRUD + create clipping job."""
 
-from datetime import datetime, timezone
+from datetime import datetime
+
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
 from sqlmodel import Session, select
-from typing import Optional
 
 from app.database import get_session
-from app.models import Project, Clip, Job
+from app.models import Clip, Job, Project
 
 router = APIRouter()
 
@@ -15,42 +15,42 @@ router = APIRouter()
 class CreateProjectRequest(BaseModel):
     """Create a new clipping project."""
     source_type: str = "link"  # "link" | "upload"
-    source_url: Optional[str] = None
-    source_file: Optional[str] = None  # file path from upload endpoint
-    language: Optional[str] = None
-    genre: Optional[str] = None
+    source_url: str | None = None
+    source_file: str | None = None  # file path from upload endpoint
+    language: str | None = None
+    genre: str | None = None
     num_clips: int = 5
     clip_length: str = "auto"
-    prompt: Optional[str] = None
+    prompt: str | None = None
     caption_style: str = "hormozi"
-    narration_style: Optional[str] = None
-    narration_voice: Optional[str] = None
+    narration_style: str | None = None
+    narration_voice: str | None = None
     layout: str = "fill"
     aspect_ratio: str = "9:16"
     resolution: str = "1080p"
     broll_enabled: bool = False
     filler_removal: bool = True
     filler_sensitivity: float = 0.5
-    session_token: Optional[str] = None
+    session_token: str | None = None
 
 
 class ProjectResponse(BaseModel):
     """Project with clips and job status."""
     id: str
-    title: Optional[str]
+    title: str | None
     source_type: str
-    source_url: Optional[str]
+    source_url: str | None
     status: str
     num_clips: int
     clip_length: str
     caption_style: str
     layout: str
     aspect_ratio: str
-    video_title: Optional[str]
-    video_duration: Optional[float]
+    video_title: str | None
+    video_duration: float | None
     created_at: datetime
     clips: list = []
-    job: Optional[dict] = None
+    job: dict | None = None
 
 
 @router.post("", response_model=ProjectResponse)
@@ -80,7 +80,7 @@ async def create_project(req: CreateProjectRequest, session: Session = Depends(g
 
 @router.get("", response_model=list[ProjectResponse])
 async def list_projects(
-    session_token: Optional[str] = None,
+    session_token: str | None = None,
     session: Session = Depends(get_session),
 ):
     """List projects for a session."""

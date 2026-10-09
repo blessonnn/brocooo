@@ -1,6 +1,7 @@
 """Explore / Trending feed (YouTube Data API v3 proxy with caching)."""
 
 import time
+
 import httpx
 from fastapi import APIRouter, Query
 

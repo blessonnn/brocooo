@@ -1,11 +1,11 @@
 """Clips router — details, download, update."""
 
+import os
+
 from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 from sqlmodel import Session
-from typing import Optional
-import os
 
 from app.database import get_session
 from app.models import Clip
@@ -14,14 +14,14 @@ router = APIRouter()
 
 
 class UpdateClipRequest(BaseModel):
-    title: Optional[str] = None
-    description: Optional[str] = None
-    hashtags: Optional[list[str]] = None
-    caption_style: Optional[str] = None
-    layout: Optional[str] = None
-    is_favorite: Optional[bool] = None
-    label: Optional[str] = None
-    folder: Optional[str] = None
+    title: str | None = None
+    description: str | None = None
+    hashtags: list[str] | None = None
+    caption_style: str | None = None
+    layout: str | None = None
+    is_favorite: bool | None = None
+    label: str | None = None
+    folder: str | None = None
 
 
 @router.get("/{clip_id}")

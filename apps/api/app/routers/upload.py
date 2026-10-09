@@ -2,8 +2,9 @@
 
 import os
 from uuid import uuid4
-from fastapi import APIRouter, UploadFile, File, HTTPException
+
 import aiofiles
+from fastapi import APIRouter, File, HTTPException, UploadFile
 
 from app.config import settings
 

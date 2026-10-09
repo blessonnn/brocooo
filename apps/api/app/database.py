@@ -1,6 +1,7 @@
 """Database setup with SQLModel."""
 
-from sqlmodel import SQLModel, create_engine, Session
+from sqlmodel import Session, SQLModel, create_engine
+
 from app.config import settings
 
 # SQLite needs check_same_thread=False for FastAPI

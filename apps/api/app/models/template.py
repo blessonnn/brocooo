@@ -1,11 +1,10 @@
 """Brand template model."""
 
 from datetime import datetime, timezone
-from typing import Optional
 from uuid import uuid4
 
-from sqlmodel import SQLModel, Field, Column
 from sqlalchemy import JSON
+from sqlmodel import Column, Field, SQLModel
 
 
 def _uuid() -> str:
@@ -23,12 +22,12 @@ class BrandTemplate(SQLModel, table=True):
 
     id: str = Field(default_factory=_uuid, primary_key=True)
     name: str
-    user_id: Optional[str] = None
+    user_id: str | None = None
     caption_style: dict = Field(default={}, sa_column=Column(JSON))
     colors: dict = Field(default={}, sa_column=Column(JSON))
     fonts: list = Field(default=[], sa_column=Column(JSON))
-    logo_path: Optional[str] = None
-    intro_path: Optional[str] = None
-    outro_path: Optional[str] = None
+    logo_path: str | None = None
+    intro_path: str | None = None
+    outro_path: str | None = None
     vocabulary: list = Field(default=[], sa_column=Column(JSON))
     created_at: datetime = Field(default_factory=_now)

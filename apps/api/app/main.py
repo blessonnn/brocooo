@@ -1,14 +1,16 @@
 """Brocooo API — FastAPI application."""
 
+import os
 from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-import os
 
 from app.config import settings
 from app.database import create_db_and_tables
-from app.routers import projects, clips, upload, progress, explore, settings as settings_router
+from app.routers import clips, explore, progress, projects, upload
+from app.routers import settings as settings_router
 
 
 @asynccontextmanager

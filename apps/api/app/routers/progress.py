@@ -2,11 +2,12 @@
 
 import asyncio
 import json
-from fastapi import APIRouter, Depends
+
+from fastapi import APIRouter
 from fastapi.responses import StreamingResponse
 from sqlmodel import Session, select
 
-from app.database import get_session, engine
+from app.database import engine
 from app.models import Job
 
 router = APIRouter()
