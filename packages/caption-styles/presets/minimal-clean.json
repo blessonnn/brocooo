@@ -1,0 +1,49 @@
+{
+  "id": "minimal-clean",
+  "name": "Minimal Clean",
+  "category": "minimal",
+  "font": {
+    "family": "Inter",
+    "size": 48,
+    "weight": 500,
+    "italic": false,
+    "uppercase": false,
+    "letterSpacing": 0
+  },
+  "colors": {
+    "fill": "#FFFFFF",
+    "stroke": "transparent",
+    "strokeWidth": 0,
+    "shadow": "0 2px 4px rgba(0,0,0,0.8)",
+    "activeWord": "#FFFFFF",
+    "activeBg": "rgba(198, 255, 61, 0.3)"
+  },
+  "background": {
+    "enabled": true,
+    "color": "rgba(0,0,0,0.6)",
+    "opacity": 0.6,
+    "borderRadius": 12,
+    "padding": [12, 24, 12, 24]
+  },
+  "position": {
+    "vertical": "bottom",
+    "marginBottom": 100,
+    "alignment": "center"
+  },
+  "display": {
+    "wordsPerLine": 6,
+    "maxLines": 2,
+    "mode": "sentence"
+  },
+  "animation": {
+    "type": "none",
+    "activeWordScale": 1.0,
+    "duration": 0,
+    "easing": "linear"
+  },
+  "emoji": {
+    "enabled": false,
+    "position": "inline",
+    "reactiveToSentiment": false
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "neon-glow",
+  "name": "Neon Glow",
+  "category": "retro",
+  "font": {
+    "family": "Outfit",
+    "size": 60,
+    "weight": 800,
+    "italic": true,
+    "uppercase": true,
+    "letterSpacing": 2
+  },
+  "colors": {
+    "fill": "#FFFFFF",
+    "stroke": "transparent",
+    "strokeWidth": 0,
+    "shadow": "0 0 10px #C6FF3D, 0 0 20px #C6FF3D",
+    "activeWord": "#C6FF3D",
+    "activeBg": "transparent"
+  },
+  "background": {
+    "enabled": false,
+    "color": "#000000",
+    "opacity": 0,
+    "borderRadius": 0,
+    "padding": [0, 0, 0, 0]
+  },
+  "position": {
+    "vertical": "center",
+    "marginBottom": 0,
+    "alignment": "center"
+  },
+  "display": {
+    "wordsPerLine": 3,
+    "maxLines": 2,
+    "mode": "word"
+  },
+  "animation": {
+    "type": "fade",
+    "activeWordScale": 1.1,
+    "duration": 200,
+    "easing": "ease-in-out"
+  },
+  "emoji": {
+    "enabled": true,
+    "position": "inline",
+    "reactiveToSentiment": true
+  }
+}
